@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" th:action="@{/addrobot}" th:object="${robot}" method="post">
+    
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    
+    <label for="register">Register</label>
+    <input type="text" th:field="*{register}" id="register" placeholder="Register">
+    <span th:if="${#fields.hasErrors('register')}" th:errors="*{register}"></span>
+   
+    <input type="submit" value="Add Robot">   
+</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://wwww.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title> 
+<link rel="stylesheet" th:href="@{/css/custom.css}"/>
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<h1>Liste des robots</h1>
+
+
+	
+	<h1 align="center">Liste</h1>
+	<table id="t02" cellpadding="2">
+	<tr>
+	<th>
+		<a href="/new"><h2>Ajouter un nouveau robot</h2></a>
+	
+	</th>
+		
+	<th>
+		<a align="right" href="/delete"><h2>Supprimer un nouveau robot</h2></a>
+	</th>
+	</tr>
+	
+	</table>
+	
+	<form:form>
+	<table id="t01" border="2" width="70%" cellpadding="2">
+	<tr>
+		<th>Id</th>
+		<th>Nom</th>
+		<th>Matricule</th>
+		<th>Nombre</th>
+		<th>Supprimer</th>
+	</tr>
+	
+	<tr th:each="r: ${list}">
+		<td th:text="${r.id}"></td>
+		<td th:text="${r.name}"></td>
+		<td th:text="${r.register}"></td>
+		<td th:text="${r.number}"></td>
+	
+		<td>
+		<a align="right" href="@{'/delete/' + ${r.id}">Supprimer un nouveau robot</a>
+		</td>
+	</tr>
+	</table>
+	<br/>
+	</form:form>
+</body>
+</html>

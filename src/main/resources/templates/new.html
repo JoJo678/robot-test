@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://wwww.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/styles.css}"/> 
+<link rel="stylesheet" th:href="@{/css/custom.css}"/>
+<link rel="stylesheet" th:href="@{/css/main.css}"/>
+</head>
+<body>
+<h1>Ajout d'un nouveau robots</h1>
+	<form action="#" th:action="@{/save}" th:object="${robot}" method="post">
+    
+    <table>
+    	<tr>
+    		<td width="10%">Name</td>
+    		<td width="90%" align="left">
+    			<input type="text" th:field="*{name}"/>
+    			<label th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:class="'error'">Error in name</label>
+    		</td>
+    	
+    	</tr>
+    	
+    	
+    	<tr>
+    		<td width="10%">Register</td>
+    		<td width="90%" align="left">
+    			<input type="text" th:field="*{register}"/>
+    			<label th:if="${#fields.hasErrors('register')}" th:errors="*{register}" th:class="'error'">Error in register</label>
+    		</td>
+    	
+    	</tr>
+    	
+    	
+    	<tr>
+    		<td width="10%">Name</td>
+    		<td width="90%" align="left">
+    			<input type="text" th:field="*{number}"/>
+    			<label th:if="${#fields.hasErrors('number')}" th:errors="*{number}" th:class="'error'">Error in number</label>
+    		</td>
+    	
+    	</tr>
+    
+    	<tr>
+    		<td></td>
+    		<td>
+    			<input type="submit" value="Add Robot"> 
+    		</td>
+    		
+    	</tr>
+    
+    </table>
+    
+      
+</form>
+</body>
+</html>
