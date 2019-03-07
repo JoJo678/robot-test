@@ -11,7 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.Range;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
@@ -53,7 +55,7 @@ public class Robot {
 			this.register = register;
 	}
 	
-	public int getNumber() {
+	public Integer getNumber() {
 		return number;
 	}
 	
@@ -67,6 +69,6 @@ public class Robot {
 	@NotBlank
 	private String register;
 	
-	@NotBlank
-	private Integer number;
+	@Range(min=1, max=100)
+	private int number;
 }
